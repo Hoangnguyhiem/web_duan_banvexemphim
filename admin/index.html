@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+   
+</head>
+
+<body>
+
+    <header>
+        <div class="img" style="text-align: center;">
+            <img src="img/Admin-designstyle-jungle-m.png" alt="">
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">User</a>
+                </li>
+                <li>
+                    <a href="#">Film</a>
+                    <ul class="submenu">
+                        <li><a href="#">Add Film</a></li>
+                        <li><a href="#">Film manager</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Thống kê</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="form">
+        <h3 class="alert alert-success">THÊM LỊCH CHIẾU</h3>
+        <form action="index.php?act=addkh" class="mb-2" method="post">
+            <label class="form-label fw-bold">MÃ PHIM</label>
+            <input type="text" name="maphim" class="form-control">
+
+           
+            <label class="form-label fw-bold">NGÀY CHIẾU</label>
+            <input type="date" name="giocgieu" class="form-control">
+
+            <label class="form-label fw-bold">GIỜ CHIẾU</label>
+            <input type="time" name="giocgieu" class="form-control">
+
+            <div class="form-group mt-3">
+                <input class="btn btn btn-outline-dark" type="submit" value="THÊM MỚI" name="themmoi">
+                <input class="btn btn btn-outline-dark" type="reset" value="NHẬP LẠI">
+                <a href="index.php?act=listsp"><input class="btn btn btn-outline-dark" type="button"
+                        value="DANH SÁCH"></a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

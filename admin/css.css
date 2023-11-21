@@ -1,0 +1,312 @@
+/* css cho phần header trở lên */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu {
+    width: 200px;
+    background-color: #444;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: block;
+}
+
+.menu li {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: fixed;
+    left: 200px;
+    top: 0;
+    width: 200px;
+    background-color: #555;
+    z-index: 1;
+}
+
+.submenu a {
+    padding: 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    top: 0;
+}
+
+.menu li:hover>a {
+    background-color: #555;
+    color: red;
+}
+
+
+.menu li {
+    position: relative;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    background-color: #555;
+    z-index: 1;
+}
+
+/* css cho phần update sản phẩm */
+
+.content1 {
+    padding: 20px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: -15px; */
+    padding-top: 20px;
+    justify-content: flex-end;
+    padding-left: 10px;
+}
+
+.col {
+    flex: 1;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+x .form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF50;
+}
+
+
+
+
+/* css cho phần list sản phẩm */
+
+
+
+
+
+.row2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Canh giữa nội dung row2 */
+    padding: 20px;
+}
+
+.font_title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form_content {
+    text-align: center;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+
+}
+
+
+
+.rowmb10 {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* css cho phần thêm mới sản phẩm và upadtesp */
+
+
+.form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.form .form-group {
+    margin-top: 20px;
+}
+
+.form .btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+/* css list khách hàng */
+.formds_loai {
+    padding-top: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

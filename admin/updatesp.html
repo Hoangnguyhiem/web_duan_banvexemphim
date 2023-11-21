@@ -1,0 +1,38 @@
+<div class="form">
+        <h3 class="alert alert-success">SỬA FILM</h3>
+        <form action="index.php?act=addkh" class="mb-2" method="post">
+            <label class="form-label fw-bold">Tên Phim</label>
+            <input type="text" name="tenphim" class="form-control">
+
+            <label class="form-label fw-bold">Đạo Diễn</label>
+            <input type="text" name="daodien" class="form-control">
+
+            <label class="form-label fw-bold">THỜI LƯỢNG</label>
+            <input type="time" name="thoiluong" class="form-control">
+
+            <label class="form-label fw-bold">NƯỚC SẢN XUẤT</label>
+            <input type="text" name="nuocsanxuat" class="form-control">
+
+            <label class="form-label fw-bold">NỘI DUNG</label>
+            <input type="text" name="noidung" class="form-control">
+
+            <label class="form-label fw-bold">NĂM SẢN XUẤT</label>
+            <input class="form-control" name="namsanxuat" type="date">
+
+            <label class="form-label fw-bold">TÊN DIỄN VIÊN</label>
+            <input class="form-control" name="tendienvien" type="text">
+
+            <label class="form-label fw-bold">GIÁ VÉ</label>
+            <input class="form-control" name="giave" type="number">
+
+            <label class="form-label fw-bold">ẢNH</label>
+            <input class="form-control" name="anh" type="file">
+
+            <div class="form-group mt-3">
+                <input class="btn btn btn-outline-dark" type="submit" value="CẬP NHẬT" name="capnhat">
+                <input class="btn btn btn-outline-dark" type="reset" value="NHẬP LẠI">
+                <a href="index.php?act=listsp"><input class="btn btn btn-outline-dark" type="button"
+                        value="DANH SÁCH"></a>
+            </div>
+        </form>
+    </div>
