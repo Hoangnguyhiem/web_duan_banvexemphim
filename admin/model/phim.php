@@ -61,6 +61,20 @@ function loadone_phim($maphim)
  }
 
 
+ function loadall_lichchieu_by_maphim($maphim)
+ {
+     $sql = "SELECT lichchieu.ngaychieu, GROUP_CONCAT(lichchieu.giochieu ORDER BY lichchieu.giochieu) AS giochieu
+             FROM lichchieu
+             WHERE lichchieu.maphim = '$maphim'
+             GROUP BY lichchieu.ngaychieu
+             ORDER BY lichchieu.ngaychieu
+             LIMIT 3"; 
+     return pdo_query($sql);
+ }
+ 
+
+
+
 
 function delete_phim($maphim)
 {

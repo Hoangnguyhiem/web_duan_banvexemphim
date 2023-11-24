@@ -17,6 +17,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "phim_ct":
             if (isset($_GET['maphim']) && ($_GET['maphim'])) {
                 $load_one = loadone_phim($_GET['maphim']);
+                $lichchieu = loadall_lichchieu_by_maphim($_GET['maphim']);
+
             }
             include "view/chitietsanpham.php";
             break;
