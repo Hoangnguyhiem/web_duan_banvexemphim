@@ -28,11 +28,11 @@
                     $hinh = $hinh_path . $anh;
                     $link = "index.php?act=phim_ct&maphim=$maphim";
                     echo '
-                    <div class="container_showtime_contentItem">
+                    <a href="' . $link . '" class="container_showtime_contentItem"> 
                         <div class="container_showtime_contentItemleft">
-                           <a href="' . $link . '">
+                           
                                 <div class="container_showtime_contentItemImg" style="background-image: url(' . $hinh . ');"></div>
-                            </a>
+                         
                         </div>
                         <div class="container_showtime_contentItemInfo">
                             <div class="container_showtime_contentItemInfo--category">
@@ -42,6 +42,7 @@
                             <p class="container_showtime_contentItemInfo--name"><strong>' . $tenphim . '</strong></p>
                             <p class="container_showtime_contentItemInfo--madin">Xuất xứ: ' . $nuocsanxuat . '</p>
                             <p class="container_showtime_contentItemInfo--time">Khởi chiếu: ' . $ngaychieu . '</p>
+                            <p class="container_showtime_contentItemInfo--time" style="color:red;line-height:18px;">' . $canhbao . '</p>
                             <p class="container_showtime_contentItemInfo--showtime">Lịch chiếu:</p>
                             <div class="container_showtime_contentItemInfo--showtimeInput">';
 
@@ -52,7 +53,7 @@
 
                             echo '</div>
                         </div>
-                    </div>';
+                      </a>';
                 }
             } else {
                 echo "Không có dữ liệu lịch chiếu.";

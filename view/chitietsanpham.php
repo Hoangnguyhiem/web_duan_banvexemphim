@@ -1,5 +1,5 @@
 <style>
-    .slide{
+    .slide {
         display: none;
     }
 </style>
@@ -10,59 +10,65 @@
     echo '<div class="header_nav_bgImg" style="background-image: url(' . $hinh . ');"></div>
                 <div class="header_nav_bgItem">
                     <img src="' . $hinh . '" alt="" class="header_nav_bgImg2">
-                    <div class="header_nav_bgText">
+                    <div class="header_nav_bgText" style="width:545px; font-size: 25px;">
                         <div class="header_nav_bgText1">' . $tenphim . '</div>
-                        <div class="header_nav_bgText2">' . $noidung . '</div>
+                        <div class="header_nav_bgText3" style=" display: flex; height: 25px; flex-wrap: wrap; flex-direction: column-reverse; align-content: space-between; width:600px;">
+                            <div class="header_nav_bgText2">' . $tentheloai . '</div>
+                            <div class="header_nav_bgText2">' . $nuocsanxuat . '</div>
+                            <div class="header_nav_bgText2">' . $thoiluong . '</div>
+                            <div class="header_nav_bgText2">Đạo diễn : ' . $daodien . '</div>
+                        </div>
+                        <div class="header_nav_bgText2" style="height: 30px; padding-top:18px;">Diễn viên : ' . $tendienvien . '</div>
+                        <div class="header_nav_bgText2" style="padding-top:40px;">Khởi chiếu : ' . date('d/m/Y', strtotime($namsannxuat))  . '</div>
+                        <div class="header_nav_bgText2" style="padding-top:20px;">' . $noidung . '</div>
+                        <div class="header_nav_bgText2" style="color:red; padding-top:22px;";>' . $canhbao . '</div>
                     </div>
                 </div>
-                '
-                ;
-    ?>
-</div>
-
+             
+    </div>
 
 
 
 <div class="container container_product">
+';
+
+    $ngaychieulist = explode(",", $ngaychieu);
+
+    $ngayDaXuatHien = array();
+    foreach ($ngaychieulist as $date) {
+        // var_dump($date);
+
+        $date = trim($date);
 
 
-
-    <div class="container_product_header">
-        <div class="container_product_header-date active" data-tab="1">1-7-2023</div>
-        <div class="container_product_header-date" data-tab="2">3-7-2023</div>
-        <div class="container_product_header-date" data-tab="3">4-7-2023</div>
-    </div>
-
-    <div class="container_product_headerText">
-        <strong>Lưu ý:</strong> Khán giả dưới 13 tuổi chỉ chọn suất chiếu kết thúc trước 22h và Khán giả dưới 16 tuổi chỉ chọn suất chiếu kết thúc trước 23h.
-    </div>
-
-    <div class="container_product_headerTime active" data-tab="1">
-        <div class="container_product_headerTime--list" data-tab="1">16:00</div>
-        <div class="container_product_headerTime--list" data-tab="2">18:30</div>
-        <div class="container_product_headerTime--list" data-tab="3">21:00</div>
-        <div class="container_product_headerTime--list" data-tab="1">23:30</div>
-        <div class="container_product_headerTime--list" data-tab="2">5:45</div>
-        <div class="container_product_headerTime--list" data-tab="3">23:30</div>
-        <div class="container_product_headerTime--list" data-tab="1">5:45</div>
-    </div>
-
-    <div class="container_product_headerTime" data-tab="2">
-        <div class="container_product_headerTime--list ">14:00</div>
-        <div class="container_product_headerTime--list">12:30</div>
-        <div class="container_product_headerTime--list">21:00</div>
-        <div class="container_product_headerTime--list">20:30</div>
-    </div>
-
-    <div class="container_product_headerTime" data-tab="3">
-        <div class="container_product_headerTime--list ">16:00</div>
-        <div class="container_product_headerTime--list">14:30</div>
-        <div class="container_product_headerTime--list">09:00</div>
-        <div class="container_product_headerTime--list">23:30</div>
-        <div class="container_product_headerTime--list">01:45</div>
-    </div>
+        if (!in_array($date, $ngayDaXuatHien) && count($ngayDaXuatHien) < 3) {
+            $ngayDaXuatHien[] = $date;
 
 
+            echo '
+            <div class="container_product_header">
+                <div class="container_product_header-date" data-tab="' . $date . '">' . $date . '</div>
+            
+            </div>
+            
+            <div class="container_product_headerText">
+                <strong>Lưu ý:</strong> Khán giả dưới 13 tuổi chỉ chọn suất chiếu kết thúc trước 22h và Khán giả dưới 16 tuổi chỉ chọn suất chiếu kết thúc trước 23h.
+            </div>
+
+            <div class="container_product_headerTime" data-tab="' . $date . '">
+                <div class="container_product_headerTime--list" data-tab="1">16:00</div>
+                <div class="container_product_headerTime--list" data-tab="2">18:30</div>
+                <div class="container_product_headerTime--list" data-tab="3">21:00</div>
+                <div class="container_product_headerTime--list" data-tab="4">23:30</div>
+                <div class="container_product_headerTime--list" data-tab="5">5:45</div>
+            </div>
+
+
+            
+        ';
+        }
+    }
+    ?>
 
 
 

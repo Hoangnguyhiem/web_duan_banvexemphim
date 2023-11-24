@@ -47,32 +47,12 @@ function loadall_phim_top5()
 }
 
 
-
-function delete_phim($maphim)
-{
-    $sql = "DELETE FROM phim WHERE maphim=\"" . $maphim . "\"";
-    pdo_execute($sql);
-}
-
-function insert_phim($tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $matheloai, $tendienvien, $giave, $hinh)
-{
-    $sql = "INSERT INTO phim (maphim,tenphim,daodien,thoiluong,nuocsanxuat,noidung,namsannxuat,matheloai,tendienvien,giave,anh) 
-    VALUES (generate_maphim(), '$tenphim', '$daodien', '$thoiluong','$nuocsanxuat','$noidung','$namsannxuat','$matheloai','$tendienvien','$giave','$hinh')";
-
-    pdo_execute($sql);
-}
-
-// function loadone_phim($maphim)
-// {
-//     $sql = "select * from phim WHERE maphim=\"" . $maphim . "\"";
-//     $sp = pdo_query_one($sql);
-//     return $sp;
-// }
 function loadone_phim($maphim)
 {
-    $sql = "SELECT phim.*, lichchieu.giochieu, lichchieu.ngaychieu
+    $sql = "SELECT phim.*, lichchieu.giochieu, lichchieu.ngaychieu,theloai.tentheloai
             FROM phim
             LEFT JOIN lichchieu ON phim.maphim = lichchieu.maphim
+            INNER JOIN theloai ON phim.matheloai = theloai.matheloai
             WHERE phim.maphim=\"" . $maphim . "\"";
 
     $sp = pdo_query_one($sql);
@@ -81,14 +61,50 @@ function loadone_phim($maphim)
  }
 
 
-function update_phim($maphim, $tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $tendienvien, $giave, $anh)
+
+function delete_phim($maphim)
 {
-    if ($anh != "")
-        $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "',anh = '" . $anh . "' WHERE maphim=\"" . $maphim . "\"";
-    else
-        $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "' WHERE maphim=\"" . $maphim . "\"";
+    $sql = "DELETE FROM phim WHERE maphim=\"" . $maphim . "\"";
     pdo_execute($sql);
 }
+
+function insert_phim($tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $matheloai, $tendienvien, $giave, $hinh, $canhbao)
+{
+    $count = "SELECT COUNT(*) FROM phim";
+    $newId = "";
+    if (pdo_query($count)[0][0] = 0) {
+        $newId = "f1";
+    } else {
+        $newId = "f" . pdo_query($count)[0][0] + 1;
+    }
+
+    $sql = "INSERT INTO phim (maphim,tenphim,daodien,thoiluong,nuocsanxuat,noidung,namsannxuat,matheloai,tendienvien,giave,anh,canhbao) 
+    VALUES ('$newId', '$tenphim', '$daodien', '$thoiluong','$nuocsanxuat','$noidung','$namsannxuat','$matheloai','$tendienvien','$giave','$hinh','$canhbao')";
+    pdo_execute($sql);
+}
+
+
+
+function update_phim($maphim, $tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $tendienvien, $giave, $anh, $canhbao)
+{
+    if ($anh != "")
+        $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "',anh = '" . $anh . "',canhbao= '" . $canhbao . "' WHERE maphim=\"" . $maphim . "\"";
+    else
+        $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "', canhbao= '" . $canhbao . "' WHERE maphim=\"" . $maphim . "\"";
+    pdo_execute($sql);
+}
+
+
+
+
+// function update_phim($maphim, $tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $tendienvien, $giave, $anh)
+// {
+//     if ($anh != "")
+//         $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "',anh = '" . $anh . "' WHERE maphim=\"" . $maphim . "\"";
+//     else
+//         $sql = "UPDATE phim SET tenphim ='" . $tenphim . "', daodien = '" . $daodien . "',thoiluong = '" . $thoiluong . "',nuocsanxuat = '" . $nuocsanxuat . "', noidung = '" . $noidung . "',namsannxuat = '" . $namsannxuat . "',tendienvien = '" . $tendienvien . "',giave = '" . $giave . "' WHERE maphim=\"" . $maphim . "\"";
+//     pdo_execute($sql);
+// }
 
 
 

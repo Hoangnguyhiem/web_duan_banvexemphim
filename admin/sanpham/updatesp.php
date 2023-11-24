@@ -43,6 +43,9 @@ if (is_file($hinhpart)) {
         <label class="form-label fw-bold">ẢNH</label>
         <input class="form-control" name="anh" type="file"> <?= $img ?>
 
+        <label class="form-label fw-bold">CẢNH BÁO</label>
+        <textarea name="canhbao" class="form-control" cols="30" rows="5"><?= $canhbao ?></textarea>
+
         <div class="form-group mt-3">
             <input type="hidden" name="maphim" value="<?= $maphim ?>">
 

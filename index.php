@@ -26,7 +26,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 if (!empty($phim_lichchieu) && is_array($phim_lichchieu)) {
                     include "view/lichchieu.php";
                 } else {
-                    // Xử lý trường hợp không có dữ liệu hoặc dữ liệu không hợp lệ
+                    
                     echo "Không có dữ liệu lịch chiếu hoặc dữ liệu không hợp lệ.";
                 }
                 break;

@@ -20,7 +20,7 @@
         <label class="form-label fw-bold">NĂM SẢN XUẤT</label>
         <input class="form-control" name="namsannxuat" type="date">
 
-        <label class="form-label fw-bold">TÊN THỂ LOẠI</label>
+        <label class="form-label fw-bold">Loại Sách</label>
         <select name="matheloai" id="">
                 <?php
                 $a="SELECT * FROM `theloai`";
@@ -42,6 +42,10 @@
 
         <label class="form-label fw-bold">ẢNH</label>
         <input class="form-control" type="file" name="hinh">
+
+        <label class="form-label fw-bold">CẢNH BÁO</label>
+        <textarea name="canhbao" class="form-control" cols="15" rows="5"></textarea>
+
 
         <div class="form-group mt-3">
             <input class="btn btn btn-outline-dark" type="submit" value="THÊM MỚI" name="themmoi">

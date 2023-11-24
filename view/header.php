@@ -34,6 +34,7 @@
                     <?php
                     if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                         extract($_SESSION['user']);
+                        // var_dump($_SESSION['user']);
                         echo ' <div class="header_nav_user">
                         <i class="fa-solid fa-user header_nav_user--icon"></i>
                         <div class="header_nav_user--name">' . $tentaikhoan . '</div>

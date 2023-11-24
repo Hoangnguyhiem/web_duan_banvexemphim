@@ -29,6 +29,7 @@
                         <th>TÊN DIỄN VIÊN</th>
                         <th>GIÁ VÉ</th>
                         <th>ẢNH</th>
+                        <th>Cảnh Báo</th>
                         <th>CHỨC VỤ</th>
                     </tr>
                     <?php
@@ -57,6 +58,7 @@
                                     <td>' . $tendienvien . '</td>
                                     <td>' . $giave . '</td>
                                     <td>' . $img . '</td>
+                                    <td>' . $canhbao . '</td>
                                     <td> 
                                         <a href="' . $suaphim . '"><input class="edit" type="button" value="Sửa"></a>
                                         <a href="' . $xoaphim . '"><input class="delete" type="button" value="Xóa" onclick="return confirm(\'Bạn có chắc chắn muốn xoá bộ phim này\')"></a>

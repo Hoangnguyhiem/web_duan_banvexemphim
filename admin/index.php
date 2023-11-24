@@ -81,7 +81,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $matheloai = $_POST['matheloai'];
                 $tendienvien = $_POST['tendienvien'];
                 $giave = $_POST['giave'];
+                $canhbao = $_POST['canhbao'];
                 $hinh = $_FILES['hinh']['name'];
+
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
 
@@ -92,7 +94,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                insert_phim($tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $matheloai, $tendienvien, $giave, $hinh);
+                insert_phim($tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $matheloai, $tendienvien, $giave, $hinh, $canhbao);
                 $thongbao = "thêm phim thành công";
             }
             $listdanhmuc = loadall_danhmuc();
@@ -144,6 +146,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $namsannxuat = $_POST['namsanxuat'];
                 $tendienvien = $_POST['tendienvien'];
                 $giave = $_POST['giave'];
+                $canhbao = $_POST['canhbao'];
                 $anh = $_FILES['anh']['name'];
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["anh"]["name"]);
@@ -155,7 +158,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_phim($maphim, $tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $tendienvien, $giave, $anh);
+                update_phim($maphim, $tenphim, $daodien, $thoiluong, $nuocsanxuat, $noidung, $namsannxuat, $tendienvien, $giave, $anh, $canhbao);
                 $thongbao = "Cập nhật thành công";
             }
             $kyw = '';
